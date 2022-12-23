@@ -6,18 +6,13 @@ c = 0
 for d in data:
     chunk_a, chunk_b = d.split(",")
 
-    double_a, triple_a = [int(num) for num in chunk_a.split("-")]
-    double_b, triple_b = [int(num) for num in chunk_b.split("-")]
+    aa, aaa = [int(num) for num in chunk_a.split("-")]
+    bb, bbb = [int(num) for num in chunk_b.split("-")]
 
-    if (
-        double_a <= double_b
-        and triple_a >= triple_b
-        or double_b <= double_a
-        and triple_b >= triple_a
-    ):
+    if aa <= bb and aaa >= bbb or bb <= aa and bbb >= aaa:
         count += 1
 
-    if triple_b >= double_a >= double_b or triple_a >= double_b >= double_a:
+    if bbb >= aa >= bb or aaa >= bb >= aa:
         c += 1
 
 print(f"result for part one is: {count}")
